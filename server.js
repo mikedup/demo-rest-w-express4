@@ -28,7 +28,7 @@ router.get('/', function(req, res) {
 
 router.route('/bears')
 
-  // create a bear
+  // create a bear (accessed at POST http://localhost:8080/api/bears)
   .post(function(req, res) {
     
     var bear = new Bear();
@@ -41,7 +41,20 @@ router.route('/bears')
       res.json({ message: 'Bear created.' });
     });
 
-  });
+  })
+
+  // get all the bears (accessed at GET http://localhost:8080/api/bears)
+
+  .get(function(req, res) {
+
+    Bear.find(function(err, bears) {
+      if (err)
+        res.send(err);
+
+      res.json(bears)
+    })
+
+  })
 
 // register routes
 app.use('/api', router);
