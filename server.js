@@ -38,7 +38,7 @@ router.route('/bears')
       if (err)
         res.send(err);
 
-      res.json({ message: 'Bear created.' });
+      res.json({ message: 'Bear ' + bear.name + ' created.' });
     });
 
   })
