@@ -11,11 +11,13 @@ Working through a tutorial http://scotch.io/tutorials/javascript/build-a-restful
 
 ## API endpoints
 
+Download [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en) for Chrome, and then you can start hitting your local API.
+
 ### http://localhost:8080/api/bears/
 
 GET a list of all of the bears in the MongoDB collection
 
-POST creates a new bear if you pass a key of `name` in the message. 
+POST creates a new bear if you pass a key of `name` in the message. (must be `x-www-form-urlencoded`)
 
 ### http://localhost:8080/api/bears/{{_id}}
 
