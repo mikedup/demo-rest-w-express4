@@ -26,3 +26,17 @@ GET all the keys about a single bear
 PUT to change the name of a bear by passing the key of `name`
 
 DELETE a single bear
+
+## User your own database
+
+I used [MongoLab](mongolab.com) for hosting the database. If you run this project as is, you'll be using my demo database. To create your own database:
+
+1. visit [MongoLab](mongolab.com)
+2. Create a free database
+3. Open `server.js`
+4. Edit `mongoose.connect('{{user}}:{{password}}@{{server}}');` to use connection info for your own database.
+
+
+
+
+
