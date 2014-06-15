@@ -2,13 +2,13 @@
 <!doctype html>
 
 <!-- ASSIGN OUR ANGULAR MODULE -->
-<html ng-app="scotchTodo">
+<html ng-app="meanBears">
 <head>
   <!-- META -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
 
-  <title>Node/Angular Todo App</title>
+  <title>meanBears</title>
 
   <!-- SCROLLS -->
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
@@ -30,35 +30,35 @@
 
     <!-- HEADER AND TODO COUNT -->
     <div class="jumbotron text-center">
-      <h1>I'm a Todo-aholic <span class="label label-info">{{ todos.length }}</span></h1>
+      <h1>I'm a list of <span class="label label-info">{{ bears.length }}</span> bears.</h1>
     </div>
 
     <!-- TODO LIST -->
     <div id="todo-list" class="row">
       <div class="col-sm-4 col-sm-offset-4">
 
-        <!-- LOOP OVER THE TODOS IN $scope.todos -->
-        <div class="checkbox" ng-repeat="todo in todos">
+        <!-- LOOP OVER THE BEARS IN $scope.bears -->
+        <div class="checkbox" ng-repeat="bear in bears">
           <label>
-            <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+            <input type="checkbox" ng-click="deleteBear(bear._id)"> {{ bear.name }}
           </label>
         </div>
 
       </div>
     </div>
 
-    <!-- FORM TO CREATE TODOS -->
-    <div id="todo-form" class="row">
+    <!-- FORM TO CREATE BEARS -->
+    <div id="bear-form" class="row">
       <div class="col-sm-8 col-sm-offset-2 text-center">
         <form>
           <div class="form-group">
 
-            <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-            <input type="text" class="form-control input-lg text-center" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
+            <!-- BIND THIS VALUE TO formData.name IN ANGULAR -->
+            <input type="text" class="form-control input-lg text-center" placeholder="placeholder" ng-model="formData.name">
           </div>
 
-          <!-- createToDo() WILL CREATE NEW TODOS -->
-          <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+          <!-- createBear() WILL CREATE NEW BEARS -->
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="createBear()">Add</button>
         </form>
       </div>
     </div>
