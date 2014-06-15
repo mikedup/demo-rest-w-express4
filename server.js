@@ -3,8 +3,15 @@ var express = require('express');
 var app	= express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.connect('demo:demo@ds033037.mongolab.com:33037/build-a-restful-api-using-node-and-express-4'); // MongoLab
+
+// config files
+var db = require('./config/db');
+
+// models
 var Bear = require('./app/models/bear');
+
+// connect to MongoDB with Mongoose
+mongoose.connect(db.url);
 
 // config the express4 app
 app.use(express.static(__dirname + '/public'));
