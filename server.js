@@ -7,6 +7,7 @@ mongoose.connect('demo:demo@ds033037.mongolab.com:33037/build-a-restful-api-usin
 var Bear = require('./app/models/bear');
 
 // config the express4 app
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser());
 
 // set our port to come from environmental variable or fallback to 8080
