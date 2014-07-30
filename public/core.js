@@ -5,7 +5,7 @@
   angular.module('meanBears', []);
 
 
-  // Main controller function
+  // Named MainController definition to ensure module methods aren't anonymous
   function MainController ($scope, DataService) {
     $scope.formData = {};
     $scope.bears;
@@ -50,7 +50,7 @@
   MainController.$inject = ['$scope', 'DataService'];
 
 
-  // Data service function
+  // Named DataService defintion to ensure module methods aren't anonymous
   function DataService ($http) {
 
     var urlBase = '/api/bears/';
@@ -74,8 +74,11 @@
 
 
   angular
+    // Reference main app module
     .module('meanBears')
+    // Set MainController controller method with function defined above
     .controller('MainController', MainController)
+    // Set DataService service method with function defined above
     .service('DataService', DataService);
 
 })();
