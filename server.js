@@ -1,6 +1,6 @@
 // call packages we need
 var express = require('express');
-var app	= express();
+var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
@@ -31,7 +31,7 @@ router.use(function(req, res, next) {
 })
 
 router.get('/', function(req, res) {
-	res.json({ message: 'hooray! welcome to our api!' });
+  res.json({ message: 'hooray! welcome to our api!' });
 });
 
 router.route('/bears')
@@ -46,7 +46,13 @@ router.route('/bears')
       if (err)
         res.send(err);
 
-      res.json({ message: 'Bear ' + bear.name + ' created.' });
+      // Return updated bears object
+      Bear.find(function (err, bears) {
+        if (err)
+          res.send(err);
+
+        res.json(bears);
+      })
     });
 
   })
@@ -60,7 +66,7 @@ router.route('/bears')
       if (err)
         res.send(err);
 
-      res.json(bears)
+      res.json(bears);
     })
   });
 
@@ -108,7 +114,13 @@ router.route('/bears/:bear_id')
       if (err)
         res.send(err);
 
-      res.json({ message: 'Successfully deleted' });
+      // Return updated bears object
+      Bear.find(function (err, bears) {
+        if (err)
+          res.send(err);
+
+        res.json(bears);
+      })
     });
   });
 
